@@ -23,10 +23,6 @@ name = "accesskit"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "74a4b14f3d99c1255dcba8f45621ab1a2e7540a0009652d33989005a4d0bfc6b"
-dependencies = [
- "enumn",
- "serde",
-]
 
 [[package]]
 name = "accesskit_consumer"
@@ -117,7 +113,6 @@ dependencies = [
  "cfg-if",
  "getrandom 0.3.3",
  "once_cell",
- "serde",
  "version_check",
  "zerocopy",
 ]
@@ -1254,7 +1249,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "20930a432bbd57a6d55e07976089708d4893f3d556cf42a0d79e9e321fa73b10"
 dependencies = [
  "bytemuck",
- "serde",
+]
+
+[[package]]
+name = "ecolor"
+version = "0.31.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc4feb366740ded31a004a0e4452fbf84e80ef432ecf8314c485210229672fd1"
+dependencies = [
+ "emath 0.31.1",
 ]
 
 [[package]]
@@ -1266,7 +1269,7 @@ dependencies = [
  "bytemuck",
  "cocoa",
  "document-features",
- "egui",
+ "egui 0.27.2",
  "egui-wgpu",
  "egui-winit",
  "egui_glow",
@@ -1299,10 +1302,23 @@ checksum = "584c5d1bf9a67b25778a3323af222dbe1a1feb532190e103901187f92c7fe29a"
 dependencies = [
  "accesskit",
  "ahash",
- "epaint",
+ "epaint 0.27.2",
  "log",
  "nohash-hasher",
- "serde",
+]
+
+[[package]]
+name = "egui"
+version = "0.31.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25dd34cec49ab55d85ebf70139cb1ccd29c977ef6b6ba4fe85489d6877ee9ef3"
+dependencies = [
+ "ahash",
+ "bitflags 2.9.1",
+ "emath 0.31.1",
+ "epaint 0.31.1",
+ "nohash-hasher",
+ "profiling",
 ]
 
 [[package]]
@@ -1313,8 +1329,8 @@ checksum = "469ff65843f88a702b731a1532b7d03b0e8e96d283e70f3a22b0e06c46cb9b37"
 dependencies = [
  "bytemuck",
  "document-features",
- "egui",
- "epaint",
+ "egui 0.27.2",
+ "epaint 0.27.2",
  "log",
  "thiserror 1.0.69",
  "type-map",
@@ -1331,7 +1347,7 @@ checksum = "2e3da0cbe020f341450c599b35b92de4af7b00abde85624fd16f09c885573609"
 dependencies = [
  "accesskit_winit",
  "arboard",
- "egui",
+ "egui 0.27.2",
  "log",
  "raw-window-handle 0.6.2",
  "smithay-clipboard",
@@ -1342,16 +1358,17 @@ dependencies = [
 
 [[package]]
 name = "egui_extras"
-version = "0.27.2"
+version = "0.31.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b78779f35ded1a853786c9ce0b43fe1053e10a21ea3b23ebea411805ce41593"
+checksum = "624659a2e972a46f4d5f646557906c55f1cd5a0836eddbe610fdf1afba1b4226"
 dependencies = [
- "egui",
+ "ahash",
+ "egui 0.31.1",
  "enum-map",
- "image 0.24.9",
+ "image 0.25.6",
  "log",
  "mime_guess2",
- "serde",
+ "profiling",
 ]
 
 [[package]]
@@ -1361,7 +1378,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e0e5d975f3c86edc3d35b1db88bb27c15dde7c55d3b5af164968ab5ede3f44ca"
 dependencies = [
  "bytemuck",
- "egui",
+ "egui 0.27.2",
  "glow",
  "log",
  "memoffset 0.9.1",
@@ -1383,8 +1400,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e4c3a552cfca14630702449d35f41c84a0d15963273771c6059175a803620f3f"
 dependencies = [
  "bytemuck",
- "serde",
 ]
+
+[[package]]
+name = "emath"
+version = "0.31.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9e4cadcff7a5353ba72b7fea76bf2122b5ebdbc68e8155aa56dfdea90083fe1b"
 
 [[package]]
 name = "endi"
@@ -1435,17 +1457,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "enumn"
-version = "0.1.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f9ed6b3789237c8a0c1c505af1c7eb2c560df6186f01b098c3a1064ea532f38"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.101",
-]
-
-[[package]]
 name = "epaint"
 version = "0.27.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1454,12 +1465,26 @@ dependencies = [
  "ab_glyph",
  "ahash",
  "bytemuck",
- "ecolor",
- "emath",
+ "ecolor 0.27.2",
+ "emath 0.27.2",
  "log",
  "nohash-hasher",
  "parking_lot",
- "serde",
+]
+
+[[package]]
+name = "epaint"
+version = "0.31.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41fcc0f5a7c613afd2dee5e4b30c3e6acafb8ad6f0edb06068811f708a67c562"
+dependencies = [
+ "ab_glyph",
+ "ahash",
+ "ecolor 0.31.1",
+ "emath 0.31.1",
+ "nohash-hasher",
+ "parking_lot",
+ "profiling",
 ]
 
 [[package]]

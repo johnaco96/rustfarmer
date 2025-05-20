@@ -1,0 +1,18 @@
+[package]
+name = "osrsfarmer"
+version = "0.1.0"
+description = "Herb Farmer!"
+authors = ["johnaco96 <161634555+johnaco96@users.noreply.github.com>"]
+license = "MIT"
+edition = "2024"
+
+[dependencies]
+crossterm = "0.28.1"
+ratatui = "0.29.0"
+color-eyre = "0.6.3"
+tokio = { version = "1.45", features = ["full"] }
+chrono = "0.4"
+notify-rust = "4.10.0"
+eframe = "0.27"
+egui_extras = { version = "0.27", features = ["image"] }
+image = { version = "0.25", features = ["png", "jpeg"] }

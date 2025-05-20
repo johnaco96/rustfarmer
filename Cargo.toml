@@ -13,6 +13,6 @@ color-eyre = "0.6.3"
 tokio = { version = "1.45", features = ["full"] }
 chrono = "0.4"
 notify-rust = "4.10.0"
-eframe = "0.27"
+eframe = "0.31"
 egui_extras = { version = "0.27", features = ["image"] }
 image = { version = "0.25", features = ["png", "jpeg"] }
